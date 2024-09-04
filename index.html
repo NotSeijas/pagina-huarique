@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huariques Pucallpa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333333;
+        }
+
+        header {
+            background-image: url('https://braunmarketingandconsulting.es/wp-content/uploads/principal.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        header h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 2.5em;
+        }
+
+        nav {
+            position: relative;
+            z-index: 2;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #eeb573fa;
+            border-radius: 10px;
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .restaurant-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .restaurant-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .restaurant-images {
+            display: flex;
+            gap: 10px;
+        }
+
+        .restaurant-images img {
+            flex: 1;
+            max-width: 45%;
+            height: auto;
+            border-radius: 10px;
+            transition: opacity 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .restaurant-images img:hover {
+            animation: blink 0.5s infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #f0f0f0;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #eeb573fa;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #33302dfa;
+            color: white;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            margin-right: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .social-links a:hover {
+            color: #eeb573fa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Huariques Pucallpa</h1>
+        <nav>
+            <a onclick="showSection('catalogo')">Catálogo</a>
+            <a onclick="showSection('reservas')">Reservas</a>
+        </nav>
+    </header>
+
+    <section id="catalogo" class="active">
+        <h2>Restaurantes Disponibles</h2>
+        <div class="restaurant-grid">
+            <div class="restaurant-item">
+                <h3>Restaurantes D'OXAS</h3>
+                <div class="restaurant-images">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK8RIaLycINy1GFX5Fc_-gs19ul2ta56wjpw&s" alt="Restaurante D'OXAS">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwAKx6uXdYozfLe_frhyhV24m5ebfTRW-X8w&s" alt="Restaurante D'OXAS">
+                </div>
+                <p><strong>Horario:</strong> Lunes a Viernes: 12:00 PM - 10:00 PM</p>
+                <p><strong>Dirección(D'Oxas):</strong> Antigua Yarinacocha Mz 181 Lt 6</p>
+                <p><strong>Dirección(D'Oxas Prime):</strong> Jirón Atahuallpa 578</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/doxaparrillasrestaurante/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestra página de Facebook en D'OXAS" class="fab fa-facebook-f"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/doxa_prime/" target="_blank" rel="noopener noreferrer" aria-label="Sigue a D'OXAS en Instagram" class="fab fa-instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+            </div>
+            <div class="restaurant-item">
+                <h3>Restaurante El Paraiso de las Alas</h3>
+                <div class="restaurant-images">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzk6kH9gNXJTtgAcvQx_7LpEF4EgvnL444xQ&s" alt="Restaurante El Paraiso de las Alas">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFBf5frzuX_G0qIt7AjUZN7MyNM89vktRWhA&s" alt="Restaurante El Paraiso de las Alas">
+                </div>
+                <p><strong>Horario:</strong> Lunes a Viernes: 12:00 PM - 10:00 PM</p>
+                <p><strong>Dirección:</strong> Jirón Bolognesi 260, Manantay 25001</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/p/El-Para%C3%ADso-de-las-Alas-100085212829111/?paipv=0&eav=AfZl6n-1b5d7F2DhHgELqTqivn8gt9oL__Dta4yUnERkjRwNs6vZ9VhgMhHghDXbltU&_rdr" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestra página de Facebook para El Paraíso de las Alas" class="fab fa-facebook-f"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/paraisodelasalas/" target="_blank" rel="noopener noreferrer" aria-label="Sigue a El Paraíso de las Alas en Instagram" class="fab fa-instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+            </div>
+            <div class="restaurant-item">
+                <h3>Restaurante Massimo grosso</h3>
+                <div class="restaurant-images">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkPsG6pC55X8_mTW_b7W3i9WlPLjW_NE25fQ&s" alt="Restaurante Massimo grosso">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaiww5q_VVAOs39m9LAJJ1YsDKXQofE8cWag&s" alt="Restaurante Massimo grosso">
+                </div>
+                <p><strong>Horario:</strong> Todos los días: 12:00 PM - 9:00 PM</p>
+                <p><strong>Dirección:</strong> Jr.Guillermo Sisley 799, Pucallpa 25006</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/massimogrossopizza" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestra página de Facebook en Massimo Grosso Pizza" class="fab fa-facebook-f"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/massimogrossopizza/" target="_blank" rel="noopener noreferrer" aria-label="Sigue a Massimo Grosso Pizza en Instagram" class="fab fa-instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+            </div>
+            <div class="restaurant-item">
+                <h3>Restaurante Raspa Bowls</h3>
+                <div class="restaurant-images">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAMN_Y5kBaLzzEg09D2hv3ey5zf7Kd6bx6cg&s" alt="Restaurante Raspa Bowls">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRit1C_AVA-qbkgSXXo2x_lT34_BSpwRS8LXw&s" alt="Restaurante Raspa Bowls">
+                </div>
+                <p><strong>Horario:</strong> Viernes a Domingo: 12:00 PM - 11:00 PM</p>
+                <p><strong>Dirección:</strong>  Av. Miraflores &, Bolivia, Pucallpa</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/raspabowl/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestra página de Facebook de Raspa Bowl" class="fab fa-facebook-f"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/raspa.bowl/?locale=%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E6%BE%B3Cxxy%C4%A3%3F%C2%B8%3F%3F%3F%3F%3F%3F%3Fe8ca4&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Sigue a Raspa Bowl en Instagram" class="fab fa-instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+            </div>
+            <div class="restaurant-item">
+                <h3>Jon Restaurante Pucallpa</h3>
+                <div class="restaurant-images">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9DyXPIC2OLS5H6y6-12Lo6xBb7QgCuxnneg&s" alt="Restaurante Sakura Sushi">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_QFvgNCJTWHOe4zfrh8vj9us5Yzahqpfwig&s" alt="Restaurante Sakura Sushi">
+                </div>
+                <p><strong>Horario:</strong> Lunes a Sábado: 1:00 PM - 10:00 PM</p>
+                <p><strong>Dirección:</strong> Jr.Guillermo Sisley 660, Pucallpa 25000</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/jonpucallpa/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestra página de Facebook de Jon Restaurante Pucallpa" class="fab fa-facebook-f"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/jonrestaurantepucallpa/?hl=es" target="_blank" rel="noopener noreferrer" aria-label="Sigue a Jon Restaurante Pucallpa en Instagram" class="fab fa-instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+            </div>
+            <div class="restaurant-item">
+                <h3>Restaurante Al Palo y la Parrilla</h3>
+                <div class="restaurant-images">
+                    <img src="data:image/png;base64,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" alt="Restaurante Al Palo y la Parrilla">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdOXS1PS-vTdu7bsseb_biFAy0D-MUSUyZkg&s" alt="Restaurante Al Palo y la Parrilla">
+                </div>
+                <p><strong>Horario:</strong> Lunes a sabado: 12:00 PM - 8:00 PM</p>
+                <p><strong>Dirección:</strong> Alfonso Ugarte 374, Pucallpa 25004</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/alpaloyalaparrilla/?locale=es_LA" target="_blank" rel="noopener noreferrer" class="fab fa-facebook-f" aria-label="Visita nuestra página de Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/alpaloyalaparrilla/?hl=es-la" target="_blank" rel="noopener noreferrer" class="fab fa-instagram" aria-label="Visita nuestra página de Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                              
+            </div>
+    </section>
+
+    <section id="reservas">
+        <h2>Formulario de Reserva</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="restaurante">Restaurante:</label>
+            <select id="restaurante" name="restaurante" required>
+                <option value="">Seleccione un restaurante</option>
+                <option value="doxas">Restaurantes D'OXAS</option>
+                <option value="paraisodelasalas">Restaurante El Paraiso de las Alas</option>
+                <option value="massimogrossopizza">Restaurante Massimo grosso</option>
+                <option value="raspabowl">Restaurante Raspa Bowls</option>
+                <option value="alpaloyalaparrilla">Restaurante Al Palo y la Parrilla</option>
+                <option value="Jon Restaurante Pucallpa">Jon Restaurante Pucallpa</option>
+                <!-- Agregar más opciones aquí según sea necesario -->
+            </select>
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora" required>
+
+            <button type="submit">Reservar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Huariques Pucallpa. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
